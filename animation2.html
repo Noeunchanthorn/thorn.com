@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        #da,
+        #feature{
+            width: 500px;
+            height: 500px;
+        }
+        #da{
+            margin: 16px auto;
+        }
+        #feature{
+            border: 3px solid lightgreen;
+            border-radius: 4px;
+        }
+        #title{
+            display: inline-block;
+            width: 500px;
+            font-family: "khmer os siemreap";
+            text-align: center;
+        }
+        .next{
+            display: none;
+        }
+        p{
+            text-align: center;
+            font-family: "khmer os siemreap";
+            color: lightsalmon;
+            background-color: maroon;
+            font-size: 22px;
+            width: 500px;
+            margin: 16px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="da">
+        <img src="../image/ថន.jpg" alt="ថន" id="feature">
+        <span id="title">ថន</span>
+        <img src="../image/គីមលាង.JPG" alt="គីមលាង" class="next">
+        <img src="../image/គឹមឡេង.JPG" alt="គឹមឡេង" class="next">
+        <img src="../image/លោកបង.JPG" alt="លោកបង" class="next">
+        <img src="../image/សុខក្រី.JPG" alt="សុខក្រី" class="next">
+    </div>
+    <br>
+    <p>1. សូមថ្លែងអំណរគុណដល់មិត្តរួមក្រុមទាំងអស់គ្នា</p>
+    <p>2. smile is charming</p>
+    <p>3. Thank you!!</p>
+    <script>
+        let img = ["ថន","គីមលាង","គឹមឡេង","លោកបង","សុខក្រី"];
+        let feature = document.getElementById("feature");
+        let title = document.getElementById("title");
+        let i = 0;
+        function dynamicattribute(){
+            feature.src = "../image/"+img[++i] + ".jpg";
+            title.innerText = img[i];
+            if(i==4){ i =-1;}
+        }
+        window.setInterval(dynamicattribute, 2000)
+    </script>
+</body>
+</html>
